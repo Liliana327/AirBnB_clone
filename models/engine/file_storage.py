@@ -39,9 +39,8 @@ class FileStorage:
         """deserializes the JSON file to __objects"""
         try:
             with open(self.__file_path, 'r') as file:
-                data = json.load(file)
-            for key in data:
-                self.__objects[key] =
-                classes[data[key]['__class__']](**data[key])
+                dt = json.load(file)
+            for key in dt:
+                self.__objects[key] = classes[dt[key]['__class__']](**dt[key])
         except:
             pass

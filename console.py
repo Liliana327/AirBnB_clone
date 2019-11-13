@@ -43,6 +43,9 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_show(self, _input):
+        """Prints the string representation of an
+           instance based on the class name and id
+        """
 
         if len(_input.split(' ')[0]) is 0:
             print("** class name missing **")
@@ -66,6 +69,7 @@ class HBNBCommand(cmd.Cmd):
         print(models.storage.all()[query_key])
 
     def do_destroy(self, _input):
+        """Deletes an instance based on the class name and id"""
 
         if len(_input.split(' ')[0]) is 0:
             print("** class name missing **")
@@ -90,6 +94,9 @@ class HBNBCommand(cmd.Cmd):
         models.storage.save()
 
     def do_all(self, _input_class_name):
+        """Prints all string representation of all instances
+           based or not on the class name.
+        """
         if _input_class_name:
             if _input_class_name not in self.collection_keys:
                 print("** class doesn't exist **")

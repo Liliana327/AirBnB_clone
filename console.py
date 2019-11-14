@@ -2,10 +2,12 @@
 import cmd
 import models
 from models.base_model import BaseModel
+import shlex
 
 classes_dict = {
     'BaseModel': BaseModel,
 }
+
 
 class HBNBCommand(cmd.Cmd):
 
@@ -41,10 +43,9 @@ class HBNBCommand(cmd.Cmd):
         new_record.save()
         print(new_record.id)
 
-
     def do_show(self, _input):
-        """Prints the string representation of an
-           instance based on the class name and id
+        """Prints the string representation of an instance
+           based on the class name and id
         """
 
         if len(_input.split(' ')[0]) is 0:
@@ -69,7 +70,8 @@ class HBNBCommand(cmd.Cmd):
         print(models.storage.all()[query_key])
 
     def do_destroy(self, _input):
-        """Deletes an instance based on the class name and id"""
+        """Deletes an instance based on the class name and id
+        """
 
         if len(_input.split(' ')[0]) is 0:
             print("** class name missing **")
@@ -95,7 +97,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, _input_class_name):
         """Prints all string representation of all instances
-           based or not on the class name.
+           based or not on the class name
         """
         if _input_class_name:
             if _input_class_name not in self.collection_keys:
@@ -106,6 +108,45 @@ class HBNBCommand(cmd.Cmd):
             item_id = models.storage.all()[item_id]
             print(item_id)
         return
+
+    def do_update(self, _input):
+        """Updates an instance based on the class name and id by adding
+           or updating attribute (save the change into the JSON file)
+        """
+        _input = shlex.split(_input)
+        query_key = ''
+
+        if len(_input) is 0:
+            print("** class name missing **")
+            return
+
+        if _input[0] not in self.collection_keys:
+            print("** class doesn't exist **")
+            return
+
+        if len(_input) is 1:
+            print("** instance id missing **")
+            return
+
+        if len(_input) > 1:
+            query_key = _input[0] + '.' + _input[1]
+
+        if query_key not in models.storage.all().keys():
+            print("** no instance found **")
+            return
+
+        if len(_input) is 2:
+            print('** attribute name missing **')
+            return
+
+        if len(_input) is 3:
+            print('** value missing **')
+            return
+        key_name = _input[2]
+        input_value = _input[3]
+        setattr(models.storage.all()[query_key], key_name, input_value)
+
+        models.storage.all()[query_key].save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

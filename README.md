@@ -2,8 +2,7 @@
 ---
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
-[![N|Solid](https://miro.medium.com/max/1016/1*4nh4ntvCLJjMUDOo1kDtIg.png)]()
-
+[![N|Solid](https://media.noticel.com/o2com-noti-media-us-east-1/photo/2017/10/13/Airbnb%20logo%2C%20website%2C%20real%20estate%2C%20rentals_8959270_ver1.0_1280_720.JPG)]
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
 * Retrieve an object from a file, a database etc...
@@ -62,4 +61,6 @@ Classes inherited from Base Model:
 * def new(self, obj) - sets in __objects the obj with key <obj class name>.id
 * def save(self) - serializes __objects to the JSON file (path: __file_path)
 *  def reload(self) -  deserializes the JSON file to __objects
-
+## Authors
+---
+[Liliana Ospina](https://github.com/Liliana327) | [Pablo Sanchez](https://github.com/jackeado)

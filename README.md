@@ -2,7 +2,7 @@
 ---
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
-[![N|Solid](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUXW7JF5MT%2F20191114%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20191114T033236Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=beed2c407ba88b28daca7260583f3625c1c138c7a799f76214012854b563e1ca)]
+[![N|Solid](https://media.noticel.com/o2com-noti-media-us-east-1/photo/2017/10/13/Airbnb%20logo%2C%20website%2C%20real%20estate%2C%20rentals_8959270_ver1.0_1280_720.JPG)]
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
 * Retrieve an object from a file, a database etc...
@@ -61,4 +61,6 @@ Classes inherited from Base Model:
 * def new(self, obj) - sets in __objects the obj with key <obj class name>.id
 * def save(self) - serializes __objects to the JSON file (path: __file_path)
 *  def reload(self) -  deserializes the JSON file to __objects
-
+## Authors
+---
+[Liliana Ospina](https://github.com/Liliana327) | [Pablo Sanchez](https://github.com/jackeado)

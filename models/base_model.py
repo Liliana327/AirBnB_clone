@@ -8,6 +8,9 @@ time = "%Y-%m-%dT%H:%M:%S.%f"
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
+        """you will use *args, **kwargs arguments for
+           the constructor of a BaseModel
+        """
         if kwargs:
             self.__dict__ = kwargs
             if 'created_at' in kwargs:
@@ -22,14 +25,19 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
+        """print the class name, id and directory"""
+
         return '[{}] ({}) {}'.format(self.__class__.__name__,
                                      self.id, self.__dict__)
 
     def save(self):
+        """updates the public instance attribute"""
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
+        """returns a dictionary containing all keys/values in dic"""
+
         new_dict = self.__dict__.copy()
         if 'created_at' in new_dict:
             new_dict.update(

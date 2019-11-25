@@ -7,19 +7,22 @@
 .places > div {
     display: flex;
 }
+
 .places article {
     width: 390px;
-    padding: 20px 20px;
-    margin: 20px 20px;
+    height: 320px;
+    padding: 20px;
+    margin: 20px;
     border: solid 1px #ff5a5f;
     border-radius: 4px;
     display: inline-block;
     vertical-align: top;
     position: relative;
 }
+
 .places h2 {
     font-size: 30px;
-    line-height: 5px;
+    line-height: 24px;
     text-align: center;
 }
 .places{
@@ -39,7 +42,7 @@
     font-size: 30px;
     position: absolute;
     right: 20px;
-    top: 25px;
+    top: 16px;
     margin: auto;
     text-align: center;
     line-height: 60px;
